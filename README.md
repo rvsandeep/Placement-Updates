@@ -7,7 +7,7 @@ A Forum for the students of CS Department at RVCE to register and keep up to dat
 
 The options in the system will include:
 
-* Login/ Registeration
+* Login/ Registration
 
 The student can login to the system using a username and password. 
 
