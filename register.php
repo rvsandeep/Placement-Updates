@@ -18,10 +18,6 @@
 <input type="password" name="pass1" id="pass1" tabindex="3"> <br><br>
 <span id="passstrength"></span>
 
-<label for="pass2">Re-Enter Password:</label>
-<input type="password" name="pass2" id="pass2" tabindex="4"> <br><br>
-
-
 <label for='phone' >Phone Number:</label>
 <input type='text' name='phone' id='phone' maxlength="15" tabindex="5"/><br><br>
 
