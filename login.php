@@ -20,8 +20,10 @@
 
 		$result_set = mysqli_query($connection,$query);
 		if (mysqli_num_rows($result_set) == 1) {
+			$db_field = mysqli_fetch_array($result_set,MYSQLI_ASSOC);
 			$_SESSION["cred"]="0";
 			$_SESSION["username"]=$username;
+			$_SESSION["uid"] = $db_field["uid"];
 			redirect_to("shome.php");
 		}
 	 else {

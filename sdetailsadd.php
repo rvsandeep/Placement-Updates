@@ -1,13 +1,24 @@
+<?php
+	session_start();
+	require_once("includes/connection.php");
+	require_once("includes/functions.php");
+// Query the database for the username and password
+	global $connection;
+?>
 <html>
 <head>
 	<script type="text/javascript" src="http://www.code.jquery.com/jquery-latest.js">
 	</script>
 </head>
 <body>
-<h2>Registration Form</h2>
+<h2>Registration Form<?php echo ' uid is :'.$_SESSION["uid"]?></h2>
 <hr>
 <form method="post" action="sdetailssubmit.php">
 <h2>Personal Details:</h2><br>
+
+<label for="usn"> USN: </label>
+<input type="text" name="usn" id="usn" tabindex="1"> <br><br>
+
 <label for="fname"> Full Name: </label>
 <input type="text" name="fname" id="fname" tabindex="1"> <br><br>
 
@@ -16,9 +27,6 @@
 
 <label for='phone' >Phone Number:</label>
 <input type='text' name='phone' id='phone' maxlength="15" tabindex="4"/><br><br>
-
-<label for='address' >Address:</label>
-<textarea rows="5" cols="20" name='address' id='address' tabindex="5"> </textarea><br><br>
 
 <hr>
 <h2>Acedemic Details:</h2>
