@@ -51,21 +51,52 @@
 					$cgpa.'<br>'.
 					$back.'<br>';
 
-		$query = "INSERT INTO studentdetails VALUES ('{$usn}',{$uid},
-													'{$fname}','{$email}',
-													'{$phone}','{$tenth}',
-													'{$twelth}','{$diploma}',
-													{$sem1},{$sem2},
-													{$sem3},{$sem4},
-													{$sem5},{$sem6},
-													{$sem7},{$cgpa},{$back})";
+		$query = "SELECT uid ";
+		$query .= "FROM studentdetails ";
+		$query .= "WHERE uid = ".$_SESSION["uid"]." ";
+		$query .= "LIMIT 1";
+		$result_set = mysqli_query($connection,$query);
+
+		if (mysqli_num_rows($result_set) == 1) {
+			$db_field = mysqli_fetch_array($result_set,MYSQLI_ASSOC);
+		
+			$query ="UPDATE studentdetails SET 
+					usn='{$usn}',
+					fullname='{$fname}',
+					email='{$email}',
+					contact='{$phone}',
+					tenth='{$tenth}',
+					twelth='{$twelth}',
+					diploma='{$diploma}',
+					sem1={$sem1},
+					sem2={$sem2},
+					sem3={$sem3},
+					sem4={$sem4},
+					sem5={$sem5},
+					sem6={$sem6},
+					sem7={$sem7},
+					cgpa={$cgpa},
+					backlogs={$back} WHERE uid={$uid}
+					";
+		
+		} else {
+
+
+			$query = "INSERT INTO studentdetails VALUES ('{$usn}',{$uid},
+														'{$fname}','{$email}',
+														'{$phone}','{$tenth}',
+														'{$twelth}','{$diploma}',
+														{$sem1},{$sem2},
+														{$sem3},{$sem4},
+														{$sem5},{$sem6},
+														{$sem7},{$cgpa},{$back})";
+		}
 		$result = mysqli_query($connection,$query);
 		if ($result) {
 			echo "<p>The user details was successfully updated.<br><p>";
 		} else {
 			echo "<p>The details was not updated.Try Again.<br></p>";
 		}
-		
 echo "
 </body>
 </html>";
