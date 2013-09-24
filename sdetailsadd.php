@@ -55,7 +55,7 @@
 	</script>
 </head>
 <body>
-<h2>Registration Form<?php echo ' uid is :'.$_SESSION["uid"]?></h2>
+<h2>Registration Form</h2>
 <hr>
 <form method="post" action="sdetailssubmit.php">
 <h2>Personal Details:</h2><br>
