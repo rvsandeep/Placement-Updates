@@ -6,7 +6,7 @@
 <body>
 <h2>Registration Form</h2>
 <hr>
-<form method="post" action="submit.php">
+<form method="post" action="sdetailssubmit.php">
 <h2>Personal Details:</h2><br>
 <label for="fname"> Full Name: </label>
 <input type="text" name="fname" id="fname" tabindex="1"> <br><br>
@@ -17,8 +17,8 @@
 <label for='phone' >Phone Number:</label>
 <input type='text' name='phone' id='phone' maxlength="15" tabindex="4"/><br><br>
 
-<label for='Address' >Address:</label>
-<textarea rows="5" cols="20" name='Address' id='Address' tabindex="5"> </textarea><br><br>
+<label for='address' >Address:</label>
+<textarea rows="5" cols="20" name='address' id='address' tabindex="5"> </textarea><br><br>
 
 <hr>
 <h2>Acedemic Details:</h2>
@@ -29,8 +29,8 @@
 <label for='12' >12th/PUC Percentile:</label>
 <input type='text' name='12' id='12' maxlength="15" tabindex="7"/><br><br>
 
-<label for='Dip' >Diploma Score:<br>(Type NA if not applicable)</label>
-<input type='text' name='Dip' id='Dip' maxlength="15" tabindex="8"/><br><br>
+<label for='dip' >Diploma Score:<br>(Type NA if not applicable)</label>
+<input type='text' name='dip' id='dip' maxlength="15" tabindex="8"/><br><br>
 
 <hr>
 <h2>RVCE Scores:</h2>
@@ -63,7 +63,7 @@
 <label for='back' >Backlogs:<br></label>
 <input type='text' name='back' id='back' maxlength="15" tabindex="17"/><br><br>
 
-<input type="submit" value="Register" tabindex="18">
+<input type="submit" value="Update Details" tabindex="18">
 
 </form>
 <p>
