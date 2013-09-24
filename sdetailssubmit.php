@@ -33,7 +33,7 @@
 		$cgpa = $_POST['cgpa'];
 		$back = $_POST['back'];
 
-		echo '<br>'.$usn.'<br>'.
+		echo "<br>{$usn}<br>".
 					$uid.'<br>'.
 					$fname.'<br>'.
 					$email.'<br>'.
@@ -51,15 +51,14 @@
 					$cgpa.'<br>'.
 					$back.'<br>';
 
-		$query = "INSERT INTO studentdetails VALUES ('{usn}','{uid}','{$fname}',
-													'{$email}','{$phone}',
-													'{$tenth}',
+		$query = "INSERT INTO studentdetails VALUES ('{$usn}',{$uid},
+													'{$fname}','{$email}',
+													'{$phone}','{$tenth}',
 													'{$twelth}','{$diploma}',
-													'{$sem1}','{$sem2}',
-													'{$sem3}','{$sem4}',
-													'{$sem5}','{$sem6}',
-													'{$sem7}','{$cgpa}',
-													'{$back}')";
+													{$sem1},{$sem2},
+													{$sem3},{$sem4},
+													{$sem5},{$sem6},
+													{$sem7},{$cgpa},{$back})";
 		$result = mysqli_query($connection,$query);
 		if ($result) {
 			echo "<p>The user details was successfully updated.<br><p>";
