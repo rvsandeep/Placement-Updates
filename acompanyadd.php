@@ -31,7 +31,7 @@
 <input type='text' name='12' id='12' maxlength="15" tabindex="8"/><br><br>
 
 <label for='Dip' >Minimum Diploma Score:<br>(Type NA if not applicable)</label>
-<input type='text' name='Dip' id='Dip' maxlength="15" tabindex="9"/><br><br>
+<input type='text' name='dip' id='dip' maxlength="15" tabindex="9"/><br><br>
 
 <hr>
 <h2>CGPA Requirements:</h2><br>

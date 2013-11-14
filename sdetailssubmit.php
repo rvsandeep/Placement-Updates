@@ -33,7 +33,7 @@
 		$cgpa = $_POST['cgpa'];
 		$back = $_POST['back'];
 
-		echo "<br>{$usn}<br>".
+		/*echo "<br>{$usn}<br>".
 					$uid.'<br>'.
 					$fname.'<br>'.
 					$email.'<br>'.
@@ -50,7 +50,7 @@
 					$sem7.'<br>'.
 					$cgpa.'<br>'.
 					$back.'<br>';
-
+*/
 		$query = "SELECT uid ";
 		$query .= "FROM studentdetails ";
 		$query .= "WHERE uid = ".$_SESSION["uid"]." ";

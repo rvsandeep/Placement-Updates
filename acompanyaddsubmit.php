@@ -2,90 +2,63 @@
 	session_start();
 	require_once("includes/connection.php");
 	require_once("includes/functions.php");
+// Query the database for the username and password
 	global $connection;
-		echo "
+	echo "
 <html>
 <head>
 	<title>
-		Company Details
+		Admin Details
 	</title>
 </head>
 <body>
-<h2>Company Information</h2>
+<h2>Student Information</h2>
 <br><br>
-";	
-	$code=$_POST['cname'];
-	$visitdate=$_POST['vdate'];
-	$interviewsdate=$_POST['idate'];
-	$deadline=$_POST['deadline'];
-	$mintenth=$_POST['10'];
-	$mintwelth=$_POST['12'];
-	$mindiploma=$_POST['dip'];
-	$mincgpa=$_POST['cgpa'];
-	$maxbacklogs=$_POST['back'];
-	$ctc=$_POST['salary'];
-	$procedur=$_POST['selection'];
-	$documents=$_POST['docs'];
-	$others=$_POST['note'];
-	
-	echo "<br>{$code}<br>".
-			$visitdate.'<br>'.
-			$interviewsdate.'<br>'.
+";
+		$cname = $_POST['cname'];
+		$deadline = $_POST['deadline'];
+		$vdate = $_POST['vdate'];
+		$idate = $_POST['idate'];
+		
+		$tenth = $_POST['10'];
+		$twelth = $_POST['12'];
+		$diploma = $_POST['dip'];
+
+		$cgpa = $_POST['cgpa'];
+		$back = $_POST['back'];
+
+		$salary = $_POST['salary'];
+		$selection = $_POST['selection'];
+		$docs = $_POST['docs'];
+		$note = $_POST['note'];
+		
+
+		/*echo '<br>'.$cname.'<br>'.
 			$deadline.'<br>'.
-			$mintenth.'<br>'.
-			$mintwelth.'<br>'.
-			$mindiploma.'<br>'.
-			$mincgpa.'<br>'.
-			$maxbacklogs.'<br>';
-			$ctc.'<br>'.
-			$procedur.'<br>'.
-			$documents.'<br>'.
-			$others.'<br>'.
-			
-	$query = "SELECT * ";
-	$query .= "FROM companydetails ";
-	$query .= "WHERE code = '{$code}' ";
-	$query .= "LIMIT 1";
-	$result_set = mysqli_query($connection,$query);
+			$vdate.'<br>'.
+			$idate.'<br>'.	
+			$tenth.'<br>'.
+			$twelth.'<br>'.
+			$diploma.'<br>'.
+			$cgpa.'<br>'.
+			$back.'<br>'.
+			$salary.'<br>'.
+			$selection.'<br>'.
+			$docs.'<br>'.
+			$note.'<br>
+		';*/
 
 
-
-	if (mysqli_num_rows($result_set) == 1) {
-		$db_field = mysqli_fetch_array($result_set,MYSQLI_ASSOC);
-		$query ="UPDATE companydetails SET 
-				code='{$code}',
-				visitdate='{$visitdate}',
-				interviewsdate='{$interviewsdate}',
-				deadline='{$deadline}',
-				mintenth='{$mintenth}',
-				mintwelth='{$mintwelth}',
-				mindiploma='{$mindiploma}',
-				mincgpa={$mincgpa},
-				maxbacklogs={$maxbacklogs},
-				ctc={$ctc},
-				procedur={$procedur},
-				documents={$documents},
-				others={$others},
-				";
-	}else {
-	
-	$query = "INSERT INTO companydetails VALUES ('{$code}',{$visitdate},
-												'{$interviewsdate}','{$deadline}',
-												'{$mintenth}','{$mintwelth}',
-												'{$mindiploma}','{$mincgpa}',
-												'{$maxbacklogs}',{$ctc},
-												{$procedur},
-												{$documents},{$others},
-			";
-		}
+		$query = "INSERT INTO  companydetails VALUES ('$cname','$vdate','$idate','$deadline','$tenth','$twelth','$diploma',$cgpa,$back,'$salary','$selection','$docs','$note')";
 		$result = mysqli_query($connection,$query);
-		if ($result) {
-			echo "<p>The details was successfully updated.<br><p>";
-		} else {
-			echo "<p>The details was not updated.Try Again.<br></p>";
-		}
+			if ($result) {
+				echo "<p>The company was successfully added.<br><br> <a href='ahome.php'>Back to Menu</a></br><p>";
+			} else {
+				echo "<p>The company could not be added.<br><br>  Try Again.<br><br>  <a href='ahome.php'>Back to Menu</a></br></p>";
+				
+			}
 echo "
 </body>
 </html>";
-	
+
 ?>
