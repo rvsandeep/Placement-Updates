@@ -1,3 +1,13 @@
+<?php
+
+	session_start();
+	require_once("includes/connection.php");
+	require_once("includes/functions.php");
+// Query the database for the username and password
+	global $connection;
+
+	?>
+
 <html>
 <head>
 	<script type="text/javascript" src="http://www.code.jquery.com/jquery-latest.js">

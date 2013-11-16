@@ -21,6 +21,8 @@
 	$tenth = $db_field["tenth"];
 	$twelth = $db_field["twelth"];
 	$diploma = $db_field["diploma"];
+	$back = $db_field["backlogs"];
+	
 	$_SESSION["usn"] = $db_field["usn"];
 	
 	if ($diploma == "NA")
@@ -32,19 +34,21 @@
 
 	$query = "SELECT * FROM companydetails";
 	$result = mysqli_query($connection,$query);
-	
+	$i =0;
 
 	while ($db_field = mysqli_fetch_array($result,MYSQLI_ASSOC))
 	{
 			$mintenth = $db_field["mintenth"];
 	$mintwelth = $db_field["mintwelth"];
 	$mindiploma = $db_field["mindiploma"];
+	$maxbacklogs = $db_field["maxbacklogs"];
+	
 	if ($mindiploma == "NA")
 	 $mindiploma = 0;
 	if ($twelth == "NA")
 	 $mintwelth= 0;
 	$rows = "";
-	if($tenth >= $mintenth && $twelth >= $mintwelth && $diploma >= $mindiploma)
+	if($tenth >= $mintenth && $twelth >= $mintwelth && $diploma >= $mindiploma && $back <= $maxbacklogs)
 	{
 
 
@@ -53,7 +57,7 @@
 
 if (mysqli_num_rows($r2) == 1)
 	continue;
-	
+		$i=1;
 		$rows.= "<tr>
 			<td>".$db_field['code']."</td>
 			<td>".$db_field["visitdate"]."</td>
@@ -74,6 +78,15 @@ if (mysqli_num_rows($r2) == 1)
 <body>
 <h2>Register For Companies</h2>
 <h3>Companies are displayed based on eligibility</h3>
+
+<?php
+
+if($i==0)
+	echo "<h3> No company found. </h3> 
+<h3> Back to <a href=\"shome.php\">menu</a></h3>";
+
+else
+	echo '
 <br>
 <table border = "border" cellpadding="6">
 	<tr>
@@ -81,7 +94,8 @@ if (mysqli_num_rows($r2) == 1)
 			<th>Visit Date/Interview Date</th>
 			<th>Register</th>
 	</tr>
-	<?php echo $rows; ?>
-</table>	
+	$rows
+</table>';
+?>	
 </body>
 </html>

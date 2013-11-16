@@ -13,7 +13,6 @@
 </head>
 <body>
 <h2>Student Information</h2>
-<br><br>
 ";
 		$usn = $_POST['usn'];
 		$uid = $_SESSION["uid"];
@@ -93,9 +92,9 @@
 		}
 		$result = mysqli_query($connection,$query);
 		if ($result) {
-			echo "<p>The user details was successfully updated.<br><p>";
+			echo "<h3>The user details was successfully updated.</h3><h3> Back to <a href=\"shome.php\">menu</a></h3>";
 		} else {
-			echo "<p>The details was not updated.Try Again.<br></p>";
+			echo "<h3>The details was not updated.Try Again.</h3><h3> Back to <a href=\"shome.php\">menu</a></h3>";
 		}
 echo "
 </body>
