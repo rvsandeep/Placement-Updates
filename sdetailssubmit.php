@@ -29,6 +29,7 @@
 		$sem5 = $_POST['s5'];
 		$sem6 = $_POST['s6'];
 		$sem7 = $_POST['s7'];
+		$sem8 = 0;
 		$cgpa = $_POST['cgpa'];
 		$back = $_POST['back'];
 
@@ -88,7 +89,7 @@
 														{$sem1},{$sem2},
 														{$sem3},{$sem4},
 														{$sem5},{$sem6},
-														{$sem7},{$cgpa},{$back})";
+														{$sem7},{$sem8},{$cgpa},{$back},'CS')";
 		}
 		$result = mysqli_query($connection,$query);
 		if ($result) {

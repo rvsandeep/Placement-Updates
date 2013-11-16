@@ -21,6 +21,8 @@
 	$tenth = $db_field["tenth"];
 	$twelth = $db_field["twelth"];
 	$diploma = $db_field["diploma"];
+	$cgpa = $db_field["cgpa"];
+	
 	$back = $db_field["backlogs"];
 	
 	$_SESSION["usn"] = $db_field["usn"];
@@ -42,13 +44,14 @@
 			$mintenth = $db_field["mintenth"];
 	$mintwelth = $db_field["mintwelth"];
 	$mindiploma = $db_field["mindiploma"];
+	$mincgpa = $db_field["mincgpa"];
 	$maxbacklogs = $db_field["maxbacklogs"];
-	
+
 	if ($mindiploma == "NA")
 	 $mindiploma = 0;
 	if ($twelth == "NA")
 	 $mintwelth= 0;
-	if($tenth >= $mintenth && $twelth >= $mintwelth && $diploma >= $mindiploma && $back <= $maxbacklogs)
+	if($cgpa >= $mincgpa && $tenth >= $mintenth && $twelth >= $mintwelth && $diploma >= $mindiploma && $back <= $maxbacklogs)
 	{
 
 
