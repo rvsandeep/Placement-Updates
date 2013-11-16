@@ -30,6 +30,7 @@
 	if ($twelth == "NA")
 	 $twelth= 100;
 
+	$rows = "";
 	
 
 	$query = "SELECT * FROM companydetails";
@@ -47,16 +48,15 @@
 	 $mindiploma = 0;
 	if ($twelth == "NA")
 	 $mintwelth= 0;
-	$rows = "";
 	if($tenth >= $mintenth && $twelth >= $mintwelth && $diploma >= $mindiploma && $back <= $maxbacklogs)
 	{
 
 
 	$q2 = "SELECT * FROM registered where usn='".$_SESSION["usn"]."' and code='".$db_field['code']."'";
 	$r2 = mysqli_query($connection,$q2);
-
 if (mysqli_num_rows($r2) == 1)
-	continue;
+	{
+	continue;}
 		$i=1;
 		$rows.= "<tr>
 			<td>".$db_field['code']."</td>
@@ -70,7 +70,6 @@ if (mysqli_num_rows($r2) == 1)
 	</tr>";
 	}
 	}
-
 
 
 ?>
@@ -94,7 +93,7 @@ else
 			<th>Visit Date/Interview Date</th>
 			<th>Register</th>
 	</tr>
-	$rows
+	'.$rows.'
 </table>';
 ?>	
 </body>
