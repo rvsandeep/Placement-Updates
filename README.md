@@ -13,6 +13,11 @@ A portal for students of CS Department at RVCE to register and keep up to date a
 
 * Add print option for report
 
+* Logout Option
+
+* JS Validations
+
+* CSS bootstrap 
 
 ## Features for Students
 
