@@ -11,6 +11,7 @@
 	session_start();
 	require_once("includes/connection.php");
 	require_once("includes/functions.php");
+	require_once("navbar.html");
 // Query the database for the username and password
 	global $connection;
 
@@ -22,7 +23,7 @@
 				$rows.= "<tr>
 			<td>".$db_field['code']."</td>
 			<td>".$db_field["visitdate"]."</td>
-			<td><button onclick= '
+			<td><button class='btn btn-success' onclick= '
 
 			window.location.assign(\"astudentreportsubmit.php?code=".$db_field['code']."&vdate=".$db_field['visitdate']."\");
 		
@@ -44,7 +45,7 @@ if($rows=="")
 
 else
 	echo '
-<table border = "border" cellpadding="6">
+<table class="table table-striped" border = "border" cellpadding="6">
 	<tr>
 			<th>Company Name</th>
 			<th>Visit Date/Interview Date</th>

@@ -11,6 +11,7 @@
 	session_start();
 	require_once("includes/connection.php");
 	require_once("includes/functions.php");
+		require_once("navbar.html");
 // Query the database for the username and password
 	global $connection;
 
@@ -64,7 +65,7 @@ if (mysqli_num_rows($r2) == 1)
 		$rows.= "<tr>
 			<td>".$db_field['code']."</td>
 			<td>".$db_field["visitdate"]."</td>
-			<td><button onclick= '
+			<td><button class='btn btn-success' onclick= '
 
 			window.location.assign(\"scompanyregsubmit.php?code=".$db_field['code']."\");
 		
@@ -90,7 +91,7 @@ if($i==0)
 else
 	echo '
 <br>
-<table border = "border" cellpadding="6">
+<table class="table table-striped" border = "border" cellpadding="6">
 	<tr>
 			<th>Company Name</th>
 			<th>Visit Date/Interview Date</th>
