@@ -11,6 +11,8 @@
 	session_start();
 	require_once("includes/connection.php");
 	require_once("includes/functions.php");
+	require_once("navbar.html");
+	
 // Query the database for the username and password
 	global $connection;
 
@@ -22,20 +24,23 @@
 ?>
 
 <body>
-<h2>Register For Companies</h2>
+	<div class="container">
+	<div class="jumbotron">
+<h1>Registeration Process</h1>
+
 <br>
 <?php 
 $query = "INSERT INTO registered VALUES ('".$_GET['code']."','$usn')";
 
 			$result = mysqli_query($connection,$query);
 			if ($result) {
-				echo "<p>Registration Completed.<a href='shome.php'>Go back</a></br><p>";
+				echo "<p>Registration Completed<p>";
 			} else {
-				
-				echo "<p>Registration Could not be Completed.<a href='shome.php'>Go back</a></br><p>";
+				echo "<p>Registration could not be completed.<p>";
 			}
 
 ?>
-
+</div>
+</div>
 </body>
 </html>

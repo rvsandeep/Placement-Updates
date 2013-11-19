@@ -63,14 +63,14 @@ if (mysqli_num_rows($r2) == 1)
 	continue;}
 		$i=1;
 		$rows.= "<tr>
-			<td>".$db_field['code']."</td>
-			<td>".$db_field["visitdate"]."</td>
-			<td><button class='btn btn-success' onclick= '
+			<td><h4>".$db_field['code']."</h4></td>
+			<td><h4>".$db_field["visitdate"]."</h4></td>
+			<td><h4><button class='btn btn-success' onclick= '
 
 			window.location.assign(\"scompanyregsubmit.php?code=".$db_field['code']."\");
 		
 
-			'>Register</button></td>
+			'>Click to Register</button></h4></td>
 	</tr>";
 	}
 	}
@@ -79,26 +79,27 @@ if (mysqli_num_rows($r2) == 1)
 ?>
 
 <body>
-<h2>Register For Companies</h2>
-<h3>Companies are displayed based on eligibility</h3>
+	<div class="container">
+	<div class="jumbotron">
+<h1>Register For Companies</h1>
+<i><h3>Companies are displayed based on eligibility</h3></i>
 
 <?php
 
 if($i==0)
-	echo "<h3> No company found. </h3> 
-<h3> Back to <a href=\"shome.php\">menu</a></h3>";
+	echo "<i><h3> No company found meeting the criteria</h3></i> </div></div>";
 
 else
-	echo '
+	echo '</div>
 <br>
-<table class="table table-striped" border = "border" cellpadding="6">
+<table class="table table-striped" style="text-align:center;" border = "border">
 	<tr>
-			<th>Company Name</th>
-			<th>Visit Date/Interview Date</th>
-			<th>Register</th>
+			<td><h4>Company Name</h4></td>
+			<td><h4>Visit Date/Interview Date</h4></td>
+			<td><h4>Register</h4></td>
 	</tr>
 	'.$rows.'
-</table>';
+</table></div>';
 ?>	
 </body>
 </html>

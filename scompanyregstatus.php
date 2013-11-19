@@ -11,6 +11,7 @@
 	session_start();
 	require_once("includes/connection.php");
 	require_once("includes/functions.php");
+	require_once("navbar.html");
 // Query the database for the username and password
 	global $connection;
 
@@ -44,21 +45,26 @@ $db_field2 = mysqli_fetch_array($r2,MYSQLI_ASSOC);
 ?>
 
 <body>
-<h2>Registration History for USN (<?php echo $usn ?>)</h2>
+<div class="container">
+
+	<div class="jumbotron">
+<h1>Registration History</h1>
+<h2><i>USN (<?php echo $usn ?>)</i></h2>
 <?php
 
 if ($rows == "")
 {
 
-	echo "<h3> No company found. </h3> ";
+	echo "<h3> No company found. </h3></div>
+ ";
 
 }
 
 else
 echo '
-
+</div>
 <br>
-<table border = "border" cellpadding="6">
+<table class="table table-striped" border = "border" cellpadding="6">
 	<tr>
 			<th>Company Name</th>
 			<th>Visit Date/Interview Date</th>
@@ -67,6 +73,6 @@ echo '
 </table>
 ';
 ?>
-<h3> Back to <a href="shome.php">menu</a></h3>	
+</div>
 </body>
 </html>
