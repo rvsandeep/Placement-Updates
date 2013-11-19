@@ -51,8 +51,7 @@
 ?>
 <html>
 <head>
-	<script type="text/javascript" src="http://www.code.jquery.com/jquery-latest.js">
-	</script>
+		<link rel="stylesheet" href="Align.css" type="text/css" />
 </head>
 <body>
 <h2>Registration Form</h2>

@@ -63,13 +63,6 @@
     </head>
     <body>
         <div class="container">
-		
-			<!-- Codrops top bar -->
-            <div class="codrops-top">
-                <span class="right">
-			</span>
-            </div><!--/ Codrops top bar -->
-			
 			<header>
 			
 				<h1><strong>Placement Registration</strong></h1>
