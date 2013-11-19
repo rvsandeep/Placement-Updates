@@ -6,6 +6,23 @@
 <head>
 	<title>Register for companies </title>
 
+				<style>
+			@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+			body {
+			
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				background-size: cover;
+			}
+			.container > header h1,
+			.container > header h2 {
+				color: #000;
+				text-shadow: 0 1px 1px rgba(0,0,0,0.7);
+			}
+}
+
+		</style>
+
 <?php
 
 	session_start();
