@@ -16,16 +16,19 @@ if (mysqli_num_rows($result) ==0)
 
 <!DOCTYPE html>
 <html>
+		<head>
+			<link rel="stylesheet" type="text/css" href="assets\css\bootstrap.css" />
+		</head>
 <body>
 <h2>Student Home</h2>
 <br>
 <h3>
-<ul>
-<li><a href ="scompanyreg.php">Register for companies</a></li>
+
+<a href ="scompanyreg.php"><button type="button" class="btn btn-primary">Register For Companies</button></a></li>
 <br><br><br>
-<li><a href ="scompanyregstatus.php">Registration Status</a></li>
+<a href ="scompanyregstatus.php"><button type="button" class="btn btn-primary">Registration Status</button></a></li>
 <br><br><br>
-<li><a href ="sdetailsadd.php">Update Details</a></li>
+<a href ="sdetailsadd.php"><button type="button" class="btn btn-primary">Update Details</button></a></li>
 <br><br><br>
 </body>
 </html>
