@@ -1,0 +1,11 @@
+body, body table{
+	font-family:"Times New Roman",Times, serif;
+	font-size: small;
+}
+
+label{
+float: left;
+width: 200px;
+font-weight: bold;
+font-size: 15px;
+}

@@ -41,29 +41,63 @@
 		<meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>LOGIN | Placement-Updates</title>
+        <title>Login Page</title>
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<style>
+			@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+			body {
+			
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				background-size: cover;
+			}
+			.container > header h1,
+			.container > header h2 {
+				color: #000;
+				text-shadow: 0 1px 1px rgba(0,0,0,0.7);
+			}
+}
+
+		</style>
     </head>
     <body>
-	
-				<h1><strong>Placement Login</strong></h1>
-				<h2>RVCE Placements</h2>
+        <div class="container">
+		
+			<!-- Codrops top bar -->
+            <div class="codrops-top">
+                <span class="right">
+			</span>
+            </div><!--/ Codrops top bar -->
+			
+			<header>
+			
+				<h1><strong>Placement Registration</strong></h1>
+				<h1>RVCE Placements</h1>
+				<h1 style="color:red;"><?php echo "<br>".$invalid;?></h1>
+				<div class="support-note">
+					<span class="note-ie">Sorry, only modern browsers.</span>
+				</div>
 				
-				<p><?php echo $invalid;?></p>
-				<form method="post" action="login.php">
-				    <p>
-				        <label for="username">Email Address</label>
+			</header>
+			
+			<section class="main">
+				<form method="post" action="login.php" class="form-3">
+				    <p class="clearfix">
+				        <label for="username">Email</label>
 				        <input type="text" name="username" id="username" placeholder="Email Address">
 				    </p>
-				    <p>
-				        <label for="pass">Password</label>
+				    <p class="clearfix">
+				        <label for="password">Password</label>
 				        <input type="password" name="password" id="password" placeholder="Password"> 
-				    </p>
-				    <p>
+				    </p><center>
+				    <p class="clearfix">
 				        <input type="submit" name="submit" value="Sign in">
-				    </p>
-				     <p>
-				        <a href="register.php">Signup</a>
-				    </p>  
+				    </p><br>
+				      <a href="register.php">To signup with email, click here</a></center>
 				</form>​          
+			</section>
+			
+        </div>
     </body>
 </html>
