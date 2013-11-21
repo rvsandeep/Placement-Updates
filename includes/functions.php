@@ -5,17 +5,35 @@ function redirect_to( $location = NULL ) {
 		exit;
 	}
 }
-function authenticate(){
-	if(empty($_SESSION["id"])||empty($_SESSION["username"]))
+function uauthenticate(){
+	if(empty($_SESSION["uid"]))
 	{
 		echo "Access Denied.";
 		exit();
 	}
-	if($_SESSION["id"]!=1)
+	if($_SESSION["cred"]!=0)
 	{
 		echo "Access Denied.";
 		session_destroy();
 		exit();
 	}
+
+
+}
+
+function aauthenticate(){
+	if(empty($_SESSION["uid"]))
+	{
+		echo "Access Denied.";
+		exit();
+	}
+	if($_SESSION["cred"]!=1)
+	{
+		echo "Access Denied.";
+		session_destroy();
+		exit();
+	}
+
+
 }
 ?>
