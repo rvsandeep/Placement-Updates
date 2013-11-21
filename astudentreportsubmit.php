@@ -22,10 +22,6 @@
 ?>
 
 <body>
-<h2>Registration Lists</h2>
-<h3>Company: <?php echo $_GET["code"]?> </h3>
-<h3>Visitdate: <?php echo $_GET["vdate"]?> </h3>
-<br>
 <?php 
 $rows = "";
 $query = "SELECT * from registered,studentdetails where registered.usn = studentdetails.usn and registered.code='".$_GET['code']."'";
@@ -47,8 +43,28 @@ $result = mysqli_query($connection,$query);
 	echo "<h3> No student found. </h3> ";
 
 else
-	echo '
-<table border = "border" cellpadding="6">
+	echo '<center>
+	<table border=2 width=75%>
+	<tr>
+		<th colspan=2 width=100%><center>
+			<h1>R.V.COLLEGE OF ENGINEERING</h1>
+			<h3>
+			(Autonomous Institution Affiliated to VTU)<br>
+			Bangalore-59</h3></center>
+		</th>
+	</tr>
+
+	<tr>
+		<th colspan=2><h2> Company Registration List</h2></th>
+	</tr>
+	<tr>
+		<th><h3>Company: '.$_GET["code"].'</h3></th>
+		<th><h3>Visitdate: '.$_GET["vdate"].'</h3></th>
+	</tr>
+	</table>
+
+<br>
+<table border = "border" cellpadding="8" width="75%" style="text-align:center;">
 	<tr>
 			<th>Student Name</th>
 			<th>USN</th>
@@ -56,9 +72,7 @@ else
 			<th>Contact</th>		
 	</tr>
 	'.$rows.'
-</table>';
-		
-echo "<h3> Back to <a href=\"ahome.php\">menu</a></h3>";
+</table></center>';
 
 ?>
 
