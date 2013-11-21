@@ -5,5 +5,5 @@
 	global $connection;
 	session_unset();
 	session_destroy();
-	redirect_to("login.php");
+	redirect_to("alogin.php");
 ?>

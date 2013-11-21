@@ -10,6 +10,7 @@
 
 		$username = $_POST['username'];
 		$password = $_POST['password'];
+
 		$hashed_password = sha1($password);
 
 		$query = "SELECT uid, username ";
@@ -21,7 +22,7 @@
 		$result_set = mysqli_query($connection,$query);
 		if (mysqli_num_rows($result_set) == 1) {
 			$db_field = mysqli_fetch_array($result_set,MYSQLI_ASSOC);
-			$_SESSION["cred"]="0";
+			$_SESSION["cred"]=0;
 			$_SESSION["username"]=$username;
 			$_SESSION["uid"] = $db_field["uid"];
 			redirect_to("shome.php");
@@ -43,7 +44,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <title>Login Page</title>
         <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        
 		<style>
 			@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
 			body {
@@ -52,8 +57,8 @@
 				-moz-background-size: cover;
 				background-size: cover;
 			}
-			.container > header h1,
-			.container > header h2 {
+			h1,
+			h2 {
 				color: #000;
 				text-shadow: 0 1px 1px rgba(0,0,0,0.7);
 			}
@@ -63,34 +68,39 @@
     </head>
     <body>
         <div class="container">
-			<header>
+        	<br>
+        	<div class="jumbotron">
+				<h1><strong>Placement Registration System</strong></h1>
+				<h2>RVCE Placements</h2>
+		</div>
 			
-				<h1><strong>Placement Registration</strong></h1>
-				<h1>RVCE Placements</h1>
-				<h1 style="color:red;"><?php echo "<br>".$invalid;?></h1>
-				<div class="support-note">
-					<span class="note-ie">Sorry, only modern browsers.</span>
-				</div>
-				
-			</header>
 			
-			<section class="main">
+				<?php if($invalid!="")		
+				echo'
+				<div class="alert alert-danger alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <p style=\'font-size:20px;\'><strong>Oops!</strong> Invalid details entered</p></div>
+			';?>
+					<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Login</h3>
+  </div>
+  <div class="panel-body">
+
+
 				<form method="post" action="index.php" class="form-3">
-				    <p class="clearfix">
-				        <label for="username">Email</label>
-				        <input type="text" name="username" id="username" placeholder="Email Address">
-				    </p>
-				    <p class="clearfix">
-				        <label for="password">Password</label>
-				        <input type="password" name="password" id="password" placeholder="Password"> 
-				    </p><center>
-				    <p class="clearfix">
-				        <input type="submit" name="submit" value="Sign in">
-				    </p><br>
-				      <a href="register.php">To signup with email, click here</a></center>
-				</form>​          
-			</section>
-			
-        </div>
+				    
+				        <p style="font-size:22px;">Email</p>
+				        <input type="text" name="username" id="username" class="form-control" placeholder="Email Address">
+				    	<br>
+				        <p style="font-size:22px;">Password</p>
+				        <input type="password" name="password" class="form-control" id="password" placeholder="Password"> 
+	</div> 
+				    <center><br>
+<input type="submit" style="width:24.5%"class="btn btn-success"></form> 
+<a href="register.php"><button style="width:25%" class="btn btn-danger">Sign Up</button>
+				      <br><br>
+			</center>
+       
     </body>
 </html>

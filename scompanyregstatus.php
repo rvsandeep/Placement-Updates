@@ -42,6 +42,8 @@
 	session_start();
 	require_once("includes/connection.php");
 	require_once("includes/functions.php");
+	uauthenticate();
+
 	require_once("navbar.html");
 // Query the database for the username and password
 	global $connection;

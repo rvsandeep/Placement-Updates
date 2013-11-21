@@ -28,7 +28,10 @@ h4 {text-align: center;}
 	session_start();
 	require_once("includes/connection.php");
 	require_once("includes/functions.php");
+
+	aauthenticate();
 	require_once("anavbar.html");
+
 // Query the database for the username and password
 	global $connection;
 
@@ -42,7 +45,7 @@ h4 {text-align: center;}
 			<td><h4>".$db_field["visitdate"]."</h4></td>
 			<td><center><button class='btn btn-success' onclick= '
 
-			window.location.assign(\"astudentreportsubmit.php?code=".$db_field['code']."&vdate=".$db_field['visitdate']."\");
+			window.open(\"astudentreportsubmit.php?code=".$db_field['code']."&vdate=".$db_field['visitdate']."\",\"_tab\");
 		
 
 			'>Get Report</button></center></td>

@@ -1,7 +1,8 @@
 <?php
 	session_start();
 	require_once("includes/connection.php");
-	require_once("includes/functions.php");
+	require_once("includes/functions.php");uauthenticate();
+
 		require_once("navbar.html");
 
 // Query the database for the username and password
@@ -21,8 +22,8 @@
 				-moz-background-size: cover;
 				background-size: cover;
 			}
-			.container > header h1,
-			.container > header h2 {
+			h1,
+			h2 {
 				color: #000;
 				text-shadow: 0 1px 1px rgba(0,0,0,0.7);
 			}
@@ -33,8 +34,8 @@
 <body>
 <div class='container'>
 	<div class='jumbotron'>
-<h2>Student Information</h2>
-</div>
+<h1>Student Information</h1>
+
 ";
 		$usn = $_POST['usn'];
 		$uid = $_SESSION["uid"];
@@ -115,11 +116,11 @@
 		}
 		$result = mysqli_query($connection,$query);
 		if ($result) {
-			echo "<h3>The user details was successfully updated.</h3><h3> Back to <a href=\"shome.php\">menu</a></h3></div>";
+			echo "<h3>The user details was successfully updated.</h3>";
 		} else {
-			echo "<h3>The details was not updated.Try Again.</h3><h3> Back to <a href=\"shome.php\">menu</a></h3></div>";
+			echo "<h3>The details was not updated.Try Again.</h3>";
 		}
-echo "
+echo "</div>
 </body>
 </html>";
 

@@ -28,6 +28,8 @@
 	session_start();
 	require_once("includes/connection.php");
 	require_once("includes/functions.php");
+	uauthenticate();
+
 		require_once("navbar.html");
 // Query the database for the username and password
 	global $connection;
@@ -64,12 +66,17 @@
 	$mindiploma = $db_field["mindiploma"];
 	$mincgpa = $db_field["mincgpa"];
 	$maxbacklogs = $db_field["maxbacklogs"];
+	$ldate = $db_field["deadline"];
 
 	if ($mindiploma == "NA")
 	 $mindiploma = 0;
 	if ($twelth == "NA")
 	 $mintwelth= 0;
-	if($cgpa >= $mincgpa && $tenth >= $mintenth && $twelth >= $mintwelth && $diploma >= $mindiploma && $back <= $maxbacklogs)
+	$date1=date('d/m/y');
+$tempArr=explode('/', $ldate);
+$date2 = date("d/m/y", mktime(0, 0, 0, $tempArr[1], $tempArr[0], $tempArr[2]));
+
+	if($date1<=$date2 && $cgpa >= $mincgpa && $tenth >= $mintenth && $twelth >= $mintwelth && $diploma >= $mindiploma && $back <= $maxbacklogs)
 	{
 
 
@@ -82,6 +89,7 @@ if (mysqli_num_rows($r2) == 1)
 		$rows.= "<tr>
 			<td><h4>".$db_field['code']."</h4></td>
 			<td><h4>".$db_field["visitdate"]."</h4></td>
+			<td><h4>".$db_field["deadline"]."</h4></td>
 			<td><h4><button class='btn btn-success' onclick= '
 
 			window.location.assign(\"scompanyregsubmit.php?code=".$db_field['code']."\");
@@ -113,6 +121,7 @@ else
 	<tr>
 			<td><h4>Company Name</h4></td>
 			<td><h4>Visit Date/Interview Date</h4></td>
+			<td><h4>Deadline</h4></td>
 			<td><h4>Register</h4></td>
 	</tr>
 	'.$rows.'

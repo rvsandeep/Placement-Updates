@@ -2,7 +2,8 @@
 	session_start();
 	require_once("includes/connection.php");
 	require_once("includes/functions.php");
-	require_once("navbar.html");
+	aauthenticate();
+require_once("anavbar.html");
 	
 // Query the database for the username and password
 	global $connection;
@@ -13,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 		<head>
-			<TITLE> Student Home</TITLE>
+			<TITLE> Admin Home</TITLE>
 		</head>
 		<style>
 			@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);

@@ -3,7 +3,8 @@
 	session_start();
 	require_once("includes/connection.php");
 	require_once("includes/functions.php");
-	require_once("navbar.html");
+aauthenticate();
+  require_once("anavbar.html");
 
 // Query the database for the username and password
 	global $connection;
@@ -24,8 +25,8 @@
 				-moz-background-size: cover;
 				background-size: cover;
 			}
-			.container > header h1,
-			.container > header h2 {
+			h1,h3,
+			h2 {
 				color: #000;
 				text-shadow: 0 1px 1px rgba(0,0,0,0.7);
 			}
@@ -35,107 +36,129 @@
 </head>
 <body>
 <div class="container">
+	
 	<div class="jumbotron">
-<h2>Add Company</h2>
+<h1>Add Company</h1>
+<h3><i>Add details of a company visiting for placements</i></h3>
 </div>
 <hr>
 <form name="theForm" id="theForm" method="post" action="acompanyaddsubmit.php">
-
-<h2>Company Details: </h2><br>
-
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Company Details</h3>
+  </div>
+  <div class="panel-body">
+  
 <div class="control-group">
 <label for="cname"> Company Name: </label>
-<input type="text" name="cname" id="cname"  data-rules="required" class="validate" tabindex="1">
+<input type="text" name="cname" id="cname"  data-rules="required" class="validate form-control" tabindex="1">
     <p class="help-block"></p>
 </div>
 
 <div class="control-group">
 <label for='deadline' >Deadline:</label>
-<input type='text' name='deadline' id='deadline' data-rules="required" class="validate"  maxlength="50" tabindex="1"/>
+<input type='text' name='deadline' id='deadline' data-rules="required" class="validate form-control"  maxlength="50" tabindex="1"/>
     <p class="help-block"></p>
 </div>
 
 <div class="control-group">
 <label for='vdate' >Visit Date (Tests):</label>
-<input type='text' name='vdate' id='vdate' maxlength="50" tabindex="1"/>
+<input type='text' name='vdate' id='vdate' class="form-control" maxlength="50" tabindex="1"/>
     <p class="help-block"></p>
 </div>
 
 <div class="control-group">
 <label for='idate' >Interviews Date:</label>
-<input type='text' name='idate' id='idate' maxlength="50" tabindex="1"/>
+<input type='text' name='idate' id='idate' class="form-control" maxlength="50" tabindex="1"/>
     <p class="help-block"></p>
 </div>
-
+</div></div>
 
 <hr>
-<h2>Acedemic Requirements:</h2><br>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Academic Requirements</h3>
+  </div>
+  <div class="panel-body">
+  
 
 <div class="control-group">
 <label for='10' >Minimum 10th percentile:</label>
-<input type='text' name='10' id='10'  data-rules="required" class="validate" maxlength="15" tabindex="7"/>
+<input type='text' name='10' id='10'  data-rules="required" class="validate form-control" maxlength="15" tabindex="2"/>
     <p class="help-block"></p>
 </div>
 
 <div class="control-group">
 <label for='12' >Minimum 12th/PUC Percentile:</label>
-<input type='text' name='12' id='12' data-rules="required" class="validate"  maxlength="15" tabindex="8"/>
+<input type='text' name='12' id='12' data-rules="required" class="validate form-control"  maxlength="15" tabindex="3"/>
     <p class="help-block"></p>
 </div>
 
 <div class="control-group">
-<label for='Dip' >Minimum Diploma Score:<br>(Type NA if not applicable)</label>
-<input type='text' name='dip' id='dip'  data-rules="required" class="validate" maxlength="15" tabindex="9"/>
+<label for='Dip' >Minimum Diploma Score:(NA if not applicable)<br></label>
+<input type='text' name='dip' id='dip'  data-rules="required" class="validate form-control" maxlength="15" tabindex="4"/>
     <p class="help-block"></p>
 </div>
+</div></div>
 
 <hr>
-<h2>CGPA Requirements:</h2><br>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">CGPA Requirements</h3>
+  </div>
+  <div class="panel-body">
+  
 
 <div class="control-group">
 <label for='cgpa' >CGPA:</label>
-<input type='text' name='cgpa' id='cgpa' data-rules="required" class="validate"  maxlength="15" tabindex="17"/>
+<input type='text' name='cgpa' id='cgpa' data-rules="required" class="validate form-control"  maxlength="15" tabindex="5"/>
     <p class="help-block"></p>
 </div>
 
 <div class="control-group">
 <label for='back' >Max number of backlogs:<br></label>
-<input type='text' name='back' id='back' data-rules="required" class="validate"  maxlength="15" tabindex="9"/>
+<input type='text' name='back' id='back' data-rules="required" class="validate form-control"  maxlength="15" tabindex="6"/>
     <p class="help-block"></p>
 </div>
-
+</div></div>
 <hr>
-<h2>Other Details:</h2><br>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Other Details</h3>
+  </div>
+  <div class="panel-body">
+  
 
 <div class="control-group">
 <label for='salary' >Salary:</label>
-<input type='text' name='salary' id='salary' maxlength="15" tabindex="17"/>
+<input type='text' name='salary' data-rules="required" class="validate form-control" id='salary' maxlength="15" tabindex="7"/>
     <p class="help-block"></p>
 </div>
 
 <div class="control-group">
 <label for='selection' >Selection Process</label><br>
-<textarea rows="5" cols="20" name='selection' id='selection' tabindex="6"> </textarea>
+<textarea rows="5" cols="20" name='selection'  data-rules="required" class="validate form-control" id='selection' tabindex="8"> </textarea>
     <p class="help-block"></p>
 </div>
 
 <div class="control-group">
 <label for='docs' >Documents to carry:</label><br>
-<textarea rows="5" cols="20" name='docs' id='docs' tabindex="6"> </textarea>
+<textarea rows="5" cols="20" name='docs' data-rules="required" class="validate form-control" id='docs' tabindex="9"> </textarea>
     <p class="help-block"></p>
 </div>
 
 <div class="control-group">
 <label for='note' >Other Note(s):</label><br>
-<textarea rows="5" cols="20" name='note' id='note' tabindex="6"> </textarea>
+<textarea rows="5" cols="20" name='note' class="validate form-control" id='note' tabindex="10"> </textarea>
     <p class="help-block"></p>
 </div>
-
-<input type="submit" value="Register" tabindex="7">
+</div></div>
+<input type="submit" class="btn btn-info btn-block"value="Add company" tabindex="11">
 </form>
 </div>
 
-<p>
 </body>
 <script>
 var $my_form =  $("#theForm")
