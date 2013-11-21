@@ -76,7 +76,7 @@
 $tempArr=explode('/', $ldate);
 $date2 = date("d/m/y", mktime(0, 0, 0, $tempArr[1], $tempArr[0], $tempArr[2]));
 
-	if($date1<=$date2 && $cgpa >= $mincgpa && $tenth >= $mintenth && $twelth >= $mintwelth && $diploma >= $mindiploma && $back <= $maxbacklogs)
+	if(strtotime($date1) <= strtotime($date2) && $cgpa >= $mincgpa && $tenth >= $mintenth && $twelth >= $mintwelth && $diploma >= $mindiploma && $back <= $maxbacklogs)
 	{
 
 
