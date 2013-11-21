@@ -2,6 +2,8 @@
 	session_start();
 	require_once("includes/connection.php");
 	require_once("includes/functions.php");
+		require_once("navbar.html");
+
 // Query the database for the username and password
 	global $connection;
 	echo "
@@ -10,9 +12,29 @@
 	<title>
 		Student Details
 	</title>
+	<link rel='stylesheet' href='Align.css' type='text/css' />
+			<style>
+			@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+			body {
+			
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				background-size: cover;
+			}
+			.container > header h1,
+			.container > header h2 {
+				color: #000;
+				text-shadow: 0 1px 1px rgba(0,0,0,0.7);
+			}
+}
+		</style>
+
 </head>
 <body>
+<div class='container'>
+	<div class='jumbotron'>
 <h2>Student Information</h2>
+</div>
 ";
 		$usn = $_POST['usn'];
 		$uid = $_SESSION["uid"];
@@ -78,7 +100,6 @@
 					cgpa={$cgpa},
 					backlogs={$back} WHERE uid={$uid}
 					";
-		
 		} else {
 
 
@@ -89,13 +110,14 @@
 														{$sem1},{$sem2},
 														{$sem3},{$sem4},
 														{$sem5},{$sem6},
-														{$sem7},{$sem8},{$cgpa},{$back},'CS')";
+														{$sem7},{$cgpa},{$back})";
+			
 		}
 		$result = mysqli_query($connection,$query);
 		if ($result) {
-			echo "<h3>The user details was successfully updated.</h3><h3> Back to <a href=\"shome.php\">menu</a></h3>";
+			echo "<h3>The user details was successfully updated.</h3><h3> Back to <a href=\"shome.php\">menu</a></h3></div>";
 		} else {
-			echo "<h3>The details was not updated.Try Again.</h3><h3> Back to <a href=\"shome.php\">menu</a></h3>";
+			echo "<h3>The details was not updated.Try Again.</h3><h3> Back to <a href=\"shome.php\">menu</a></h3></div>";
 		}
 echo "
 </body>
