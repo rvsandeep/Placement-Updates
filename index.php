@@ -75,7 +75,7 @@
 			</header>
 			
 			<section class="main">
-				<form method="post" action="login.php" class="form-3">
+				<form method="post" action="index.php" class="form-3">
 				    <p class="clearfix">
 				        <label for="username">Email</label>
 				        <input type="text" name="username" id="username" placeholder="Email Address">
