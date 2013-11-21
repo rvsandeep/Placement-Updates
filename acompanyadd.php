@@ -13,10 +13,32 @@ aauthenticate();
 
 <html>
 <head>
-	<script type="text/javascript" src="http://www.code.jquery.com/jquery-latest.js">
-	</script>
-			<title>Add Company</title>
-		<link rel="stylesheet" href="Align.css" type="text/css" />
+	
+  		<title>Add Company</title>
+	<script type="text/javascript">
+
+function checkdate(input){
+var validformat=/^\d{2}\/\d{2}\/\d{4}$/ //Basic check for format validity
+var returnval=false
+if (!validformat.test(input.value))
+alert("Invalid Date Format. Please correct and submit again.")
+else{ //Detailed check for valid date ranges
+var monthfield=input.value.split("/")[0]
+var dayfield=input.value.split("/")[1]
+var yearfield=input.value.split("/")[2]
+var dayobj = new Date(yearfield, monthfield-1, dayfield)
+if ((dayobj.getMonth()+1!=monthfield)||(dayobj.getDate()!=dayfield)||(dayobj.getFullYear()!=yearfield))
+alert("Invalid Day, Month, or Year range detected. Please correct and submit again.")
+else
+returnval=true
+}
+if (returnval==false) input.select()
+return returnval
+}
+
+</script>
+
+  	<link rel="stylesheet" href="Align.css" type="text/css" />
 			<style>
 			@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
 			body {
@@ -57,19 +79,19 @@ aauthenticate();
 
 <div class="control-group">
 <label for='deadline' >Deadline:</label>
-<input type='text' name='deadline' id='deadline' data-rules="required" class="validate form-control"  maxlength="50" tabindex="1"/>
+<input type='text' name='deadline' id='deadline'  maxlength="50" tabindex="1"/>
     <p class="help-block"></p>
 </div>
 
 <div class="control-group">
 <label for='vdate' >Visit Date (Tests):</label>
-<input type='text' name='vdate' id='vdate' class="form-control" maxlength="50" tabindex="1"/>
+<input type='text' name='vdate' id='vdate' class="form-control" maxlength="50" tabindex="1" />
     <p class="help-block"></p>
 </div>
 
 <div class="control-group">
 <label for='idate' >Interviews Date:</label>
-<input type='text' name='idate' id='idate' class="form-control" maxlength="50" tabindex="1"/>
+<input type='text' name='idate' id='idate'   class="form-control" maxlength="50" tabindex="1"/>
     <p class="help-block"></p>
 </div>
 </div></div>
@@ -155,13 +177,8 @@ aauthenticate();
     <p class="help-block"></p>
 </div>
 </div></div>
-<input type="submit" class="btn btn-info btn-block"value="Add company" tabindex="11">
+<input type="submit" class="btn btn-info btn-block"value="Add company" tabindex="11" onSubmit="return checkdate(this.vdate)">
 </form>
 </div>
-
 </body>
-<script>
-var $my_form =  $("#theForm")
-$my_form.validate()
-</script>
 </html>

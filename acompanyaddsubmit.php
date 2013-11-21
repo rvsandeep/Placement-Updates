@@ -70,8 +70,6 @@ aauthenticate();
 			$docs.'<br>'.
 			$note.'<br>
 		';*/
-
-
 		$query = "INSERT INTO  companydetails VALUES ('$cname','$vdate','$idate','$deadline','$tenth','$twelth','$diploma',$cgpa,$back,'$salary','$selection','$docs','$note')";
 		$result = mysqli_query($connection,$query);
 				if ($result) {
