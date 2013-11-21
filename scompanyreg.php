@@ -87,8 +87,10 @@ if (mysqli_num_rows($r2) == 1)
 		$i=1;
 		$rows.= "<tr>
 			<td><h4>".$db_field['code']."</h4></td>
+			<td><h4>".$db_field["interviewsdate"]."</h4></td>
 			<td><h4>".$db_field["visitdate"]."</h4></td>
 			<td><h4>".$db_field["deadline"]."</h4></td>
+			<td><h4>".$db_field["ctc"]."</h4></td>
 			<td><h4><button class='btn btn-success' onclick= '
 
 			window.location.assign(\"scompanyregsubmit.php?code=".$db_field['code']."\");
@@ -119,8 +121,10 @@ else
 <table class="table table-striped" style="text-align:center;" border = "border">
 	<tr>
 			<td><h4>Company Name</h4></td>
-			<td><h4>Visit Date/Interview Date</h4></td>
-			<td><h4>Deadline</h4></td>
+			<td><h4>Interviews</h4></td>
+			<td><h4>Visit Date</h4></td>
+			<td><h4>Last Date to Apply</h4></td>
+			<td><h4>Salary</h4></td>
 			<td><h4>Register</h4></td>
 	</tr>
 	'.$rows.'
