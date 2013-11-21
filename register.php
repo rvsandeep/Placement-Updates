@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
         <script src="assets/js/bootstrap.js"></script>
         <script src="assets/js/jquery.js"></script>
-        
+
 <script type="text/javascript" src="validate_helper.js"></script>
 <script type="text/javascript" src="validate.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
@@ -53,10 +53,10 @@
 <div class="control-group">
 				        <p style="font-size:22px;">Email</p>
 				        <input type="text" name="username" id="username" data-rules="required|valid_email" class="validate form-control" placeholder="Email Address">
-				    	</div><p class="help-block"></p><br>
+				    	<p class="help-block"></p><br></div>
 				        
 <div class="control-group"><p style="font-size:22px;">Password</p>
-				        <input type="password" name="password" class="form-control"  data-rules="required" id="password" placeholder="Password"><p class="help-block"></p></div> 
+				        <input type="password" name="password" class="form-control"  data-rules="required|" id="password" placeholder="Password"><p class="help-block"></p></div> 
 	</div> 
 				    <center><br>
 <input type="submit" style="width:24.5%"class="btn btn-success" value="Register"> <input type="reset" style="width:25%"class="btn btn-danger" value="Reset">
