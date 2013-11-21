@@ -14,8 +14,8 @@
 				-moz-background-size: cover;
 				background-size: cover;
 			}
-			.container > header h1,
-			.container > header h2 {
+			h1,
+			 h2 {
 				color: #000;
 				text-shadow: 0 1px 1px rgba(0,0,0,0.7);
 			}

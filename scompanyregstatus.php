@@ -14,11 +14,25 @@
 				-moz-background-size: cover;
 				background-size: cover;
 			}
-			.container > header h1,
-			.container > header h2 {
+			h1,
+			h2 {
 				color: #000;
 				text-shadow: 0 1px 1px rgba(0,0,0,0.7);
 			}
+
+			h4
+			{
+
+				text-align: center;
+			}
+			td,
+			th,
+			tr {
+					text-align: center;
+					font-size: 18px;
+			}
+
+
 }
 
 		</style>
@@ -50,8 +64,8 @@ $rows="";
 $db_field2 = mysqli_fetch_array($r2,MYSQLI_ASSOC);
 		$rows.= "<tr>";
 		$rows.="
-			<td>".$db_field2['code']."</td>
-			<td>".$db_field2["visitdate"]."</td>
+			<td><center>".$db_field2['code']."</center></td>
+			<td><center>".$db_field2["visitdate"]."</center></td>
 	</tr>";
 
 
@@ -83,8 +97,8 @@ echo '
 <br>
 <table class="table table-striped" border = "border" cellpadding="6">
 	<tr>
-			<th>Company Name</th>
-			<th>Visit Date/Interview Date</th>
+			<th><h4>Company Name</h4></th>
+			<th><h4>Visit Date</h4></th>
 	</tr>
 	'.$rows.'
 </table>
