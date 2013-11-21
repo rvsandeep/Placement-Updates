@@ -72,11 +72,10 @@
 	 $mindiploma = 0;
 	if ($twelth == "NA")
 	 $mintwelth= 0;
-	$date1=date('d/m/y');
-$tempArr=explode('/', $ldate);
-$date2 = date("d/m/y", mktime(0, 0, 0, $tempArr[1], $tempArr[0], $tempArr[2]));
+	$ldate = str_replace('/', '-', $ldate);
+$ldate = date('m/d/y', strtotime($ldate));
 
-	if(strtotime($date1) <= strtotime($date2) && $cgpa >= $mincgpa && $tenth >= $mintenth && $twelth >= $mintwelth && $diploma >= $mindiploma && $back <= $maxbacklogs)
+	if(new DateTime() <= new DateTime($ldate) && $cgpa >= $mincgpa && $tenth >= $mintenth && $twelth >= $mintwelth && $diploma >= $mindiploma && $back <= $maxbacklogs)
 	{
 
 
