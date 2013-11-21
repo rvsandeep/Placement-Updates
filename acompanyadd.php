@@ -79,7 +79,7 @@ return returnval
 
 <div class="control-group">
 <label for='deadline' >Deadline:</label>
-<input type='text' name='deadline' id='deadline'  maxlength="50" tabindex="1"/>
+<input type='text' name='deadline' id='deadline' data-rules="required" class="validate form-control"  maxlength="50" tabindex="1"/>
     <p class="help-block"></p>
 </div>
 
