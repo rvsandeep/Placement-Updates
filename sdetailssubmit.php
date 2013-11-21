@@ -111,9 +111,10 @@
 														{$sem1},{$sem2},
 														{$sem3},{$sem4},
 														{$sem5},{$sem6},
-														{$sem7},{$cgpa},{$back})";
+														{$sem7},{$sem8},{$cgpa},{$back},'CS')";
 			
 		}
+		//echo $query;
 		$result = mysqli_query($connection,$query);
 		if ($result) {
 			echo "<h3>The user details was successfully updated.</h3>";
