@@ -5,11 +5,14 @@
 		<meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Login Page</title>
+        <title>Registration Page</title>
         <link rel="shortcut icon" href="../favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
         <script src="assets/js/bootstrap.js"></script>
         <script src="assets/js/jquery.js"></script>
+        
+<script type="text/javascript" src="validate_helper.js"></script>
+<script type="text/javascript" src="validate.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         
 		<style>
@@ -45,13 +48,15 @@
   <div class="panel-body">
 
 
-				<form method="post" action="registersubmit.php">
+				<form name="theForm" id="theForm" method="post" action="registersubmit.php">
 				    
+<div class="control-group">
 				        <p style="font-size:22px;">Email</p>
-				        <input type="text" name="username" id="username" class="form-control" placeholder="Email Address">
-				    	<br>
-				        <p style="font-size:22px;">Password</p>
-				        <input type="password" name="password" class="form-control" id="password" placeholder="Password"> 
+				        <input type="text" name="username" id="username" data-rules="required|valid_email" class="validate form-control" placeholder="Email Address">
+				    	</div><p class="help-block"></p><br>
+				        
+<div class="control-group"><p style="font-size:22px;">Password</p>
+				        <input type="password" name="password" class="form-control"  data-rules="required" id="password" placeholder="Password"><p class="help-block"></p></div> 
 	</div> 
 				    <center><br>
 <input type="submit" style="width:24.5%"class="btn btn-success" value="Register"> <input type="reset" style="width:25%"class="btn btn-danger" value="Reset">
@@ -61,4 +66,9 @@
 			</center>
        
     </body>
+    <script>
+var $my_form =  $("#theForm")
+$my_form.validate()
+</script>
+
 </html>
